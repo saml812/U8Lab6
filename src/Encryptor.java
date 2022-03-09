@@ -44,7 +44,8 @@ public class Encryptor
       test = str.substring(count);
       if (test.length() < numCols)
       {
-        for (int x = 0; x < numCols-test.length(); x++)
+        int length = test.length();
+        for (int x = 0; x < (numCols-length); x++)
         {
           test += "A";
           str += "A";
