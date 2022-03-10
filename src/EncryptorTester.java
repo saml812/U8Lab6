@@ -4,6 +4,7 @@ public class EncryptorTester
 {
   public static void main(String[] args)
   {
+    /*
     // --------------------------------
     // ---- TEST PART A: fillBlock ----
     // --------------------------------
@@ -95,7 +96,7 @@ public class EncryptorTester
       print2DArray(expected4);
       System.out.println("\nACTUAL:");
       print2DArray(actual4);
-    }
+    }*/
     
     // UNCOMMENT THE SECTIONS BELOW TO TEST EACH PART
 /*
