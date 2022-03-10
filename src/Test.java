@@ -99,26 +99,13 @@ public class Test {
         String expectedEncrypted10 = "Mseea sgwamesa  dmitanegu o";
         if (actualEncrypted10.equals(expectedEncrypted10))
         {
-            System.out.println("\nTest 1 PASSED!");
+            System.out.println("\nTest 2 PASSED!");
         }
         else
         {
-            System.out.println("\n*** Test 1 FAILED! ***");
+            System.out.println("\n*** Test 2 FAILED! ***");
             System.out.println("EXPECTED: " + expectedEncrypted10);
             System.out.println("  ACTUAL: " + actualEncrypted10);
-        }
-
-        Encryptor encryptorTester5 = new Encryptor(3, 4);
-        String actualDecrypted5 = encryptorTester5.decryptMessage("Mseea sgwamesa  dmitanegu o");
-        String expectedDecrypted5 = "Message was made minute ago";
-        if (actualDecrypted5.equals(expectedDecrypted5))
-        {
-            System.out.println("\nTest 2 PASSED!");
-        }
-        else {
-            System.out.println("\n*** Test 2 FAILED! ***");
-            System.out.println("EXPECTED: " + expectedDecrypted5);
-            System.out.println("  ACTUAL: " + actualDecrypted5);
         }
     }
 }
