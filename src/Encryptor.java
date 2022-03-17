@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Encryptor
 {
   /** A two-dimensional array of single-character strings, instantiated in the constructor */
@@ -189,4 +192,84 @@ public class Encryptor
     }
     return message;
   }
+
+  public String encryptMessage(String message, int col)
+  {
+    String sub = "";
+    fillMessage(message);
+    col = col % letterBlock[0].length;
+
+    for (int r = 0; r < letterBlock.length; r++)
+    {
+      shiftNumRightModify(letterBlock[r], col);
+    }
+    sub += encryptBlock();
+    return sub;
+  }
+
+  public String decryptMessage(String message, int col)
+  {
+    String sub = "";
+    col = col % letterBlock[0].length;
+
+    for (int r = 0; r < letterBlock.length; r++)
+    {
+      shiftNumLeftModify(letterBlock[r], col);
+    }
+    sub += decryptBlock();
+    return sub;
+  }
+
+  public void shiftNumRightModify(String[] numList, int shiftNum)
+  {
+    String first = numList[numList.length - (shiftNum + 1)];
+    String previous = "";
+    String current = "";
+
+    for (int j = 0; j < numList.length - shiftNum; j++)
+    {
+      for (int i = 0; i < numList.length - 1; i++)
+      {
+        previous = numList[i];
+        current = numList[1+i];
+        numList[i] = current;
+        numList[i+1] = previous;
+      }
+    }
+    numList[numList.length - 1] = first;
+  }
+
+  public static void shiftNumLeftModify(String[] numList, int shiftNum)
+  {
+    String first = numList[shiftNum-1];
+    String previous = "";
+    String current = "";
+
+    for (int j = 0; j < shiftNum; j++)
+    {
+      for (int i = 0; i < numList.length - 1; i++)
+      {
+        previous = numList[i];
+        current = numList[1+i];
+        numList[i] = current;
+        numList[i+1] = previous;
+      }
+    }
+    numList[numList.length - 1] = first;
+  }
+
+
+  public void fillMessage(String message)
+  {
+    String substring = message;
+    for (int r = 0; r < letterBlock.length; r++)
+    {
+      for (int c = 0; c < letterBlock[0].length; c++)
+      {
+        letterBlock[r][c] = substring.substring(c,c+1);
+        fillBlock(substring);
+      }
+    }
+  }
+
 }

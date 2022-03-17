@@ -1,6 +1,11 @@
 public class Test {
     public static void main(String[] args) {
 
+        Encryptor test = new Encryptor(5,5);
+        System.out.println(test.encryptMessage("Hello World", 2));
+        System.out.println(test.decryptMessage("lrAAAolAAAH dAAeWAAAloAAA", 2));
+
+        /*
         System.out.println("\n---- TESTING ----");
         Encryptor encryptorTest1 = new Encryptor(3, 4);
         String actualEncrypted1 = encryptorTest1.encryptMessage("What are you doing next weekend?");
@@ -107,5 +112,6 @@ public class Test {
             System.out.println("EXPECTED: " + expectedEncrypted10);
             System.out.println("  ACTUAL: " + actualEncrypted10);
         }
+         */
     }
 }
